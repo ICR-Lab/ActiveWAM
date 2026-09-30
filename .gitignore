@@ -1,0 +1,8 @@
+# Local packaging, research provenance and preview logs are not deployment assets.
+/qa/
+/*.zip
+/tools/build_assets.py
+/node_modules/
+__pycache__/
+.DS_Store
+Thumbs.db

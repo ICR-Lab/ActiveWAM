@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f5ef">
+  <meta name="description" content="ActiveWAM: Evidence-Aware Active Vision for World-Action Models. Explore task-guided history learning, joint head–arm control, and real-robot demonstrations.">
+  <meta property="og:title" content="ActiveWAM — Learn what to keep. Decide where to look.">
+  <meta property="og:description" content="Evidence-aware active vision for world-action models. Interactive demonstrations, view-aware history, and RoboTwin-AV.">
+  <meta property="og:image" content="https://icr-lab.github.io/ActiveWAM/assets/hero/real.webp">
+  <meta property="og:url" content="https://icr-lab.github.io/ActiveWAM/">
+  <link rel="canonical" href="https://icr-lab.github.io/ActiveWAM/">
+  <title>ActiveWAM · Evidence-Aware Active Vision</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="site-config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="ActiveWAM home"><span class="brand-mark" aria-hidden="true"><i></i></span>ActiveWAM<span class="brand-dot">.</span></a>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation">Menu <span>＋</span></button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="#idea">The idea</a><a href="#explore">In action</a><a href="#method">Method</a><a href="#inversion">Inversion</a><a href="#results">Results</a>
+      <a class="nav-paper" href="#resources">Paper & resources <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="eyebrow"><span class="live-dot"></span> WORLD–ACTION MODELS <span class="slash">/</span> ACTIVE VISION</div>
+      <div class="hero-heading">
+        <div><h1 id="hero-title">Active<span>WAM</span><span class="title-period">.</span></h1><p class="paper-title">Evidence-Aware Active Vision<br>for World-Action Models</p></div>
+        <div class="hero-aside"><p class="hero-promise">Learn what to keep.<br><em>Decide where to look.</em></p><p class="hero-description">A unified world–action model that connects task-guided history learning with physical head and arm control.</p><div class="hero-actions"><a class="button dark" href="#explore">Explore the demos <span>↗</span></a><a class="text-link" href="#method">How it works <span>↓</span></a></div></div>
+      </div>
+      <div class="project-links" role="group" aria-label="Paper and code">
+        <a id="project-arxiv" class="project-link pending" role="link" aria-disabled="true" aria-label="arXiv paper — coming soon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg>
+          <span class="project-link-copy"><strong>arXiv</strong><span>Research paper</span></span><span class="project-link-status">Coming soon</span>
+        </a>
+        <a id="project-code" class="project-link" href="https://github.com/ICR-Lab/ActiveWAM" target="_blank" rel="noopener" aria-label="ActiveWAM GitHub repository — code coming soon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></svg>
+          <span class="project-link-copy"><strong>GitHub <span class="project-link-arrow">↗</span></strong><span>ActiveWAM code</span></span><span class="project-link-status">Coming soon</span>
+        </a>
+        <a id="project-robotwin" class="project-link pending" role="link" aria-disabled="true" aria-label="RoboTwin-AV GitHub repository — coming soon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="3"/><path d="M12 3v4M1 12v4m22-4v4M9 16h6"/><circle cx="8" cy="11" r="1"/><circle cx="16" cy="11" r="1"/></svg>
+          <span class="project-link-copy"><strong>RoboTwin-AV</strong><span>Benchmark repository</span></span><span class="project-link-status">Coming soon</span>
+        </a>
+      </div>
+      <div class="hero-reel">
+        <div class="hero-primary">
+          <video id="hero-real" class="ambient-video" src="assets/hero/real.mp4" poster="assets/hero/real.webp" autoplay muted loop playsinline preload="metadata" aria-label="Real-robot cooking highlights: pouring oil, pouring egg, and stirring"></video>
+          <div class="media-top"><span class="media-tag"><i></i> REAL ROBOT</span><span class="media-note">RECORDED HEAD VIEW</span></div>
+          <div class="media-bottom"><div><span class="micro">OBSERVE · FRAME · MANIPULATE</span><h2>A changing view.<br>A continuing task.</h2></div><a href="#explore" data-open-task="egg_cooking" class="round-link" aria-label="Explore the real-robot egg task">↗</a></div>
+          <span class="view-corner tl" aria-hidden="true"></span><span class="view-corner br" aria-hidden="true"></span>
+        </div>
+        <div class="hero-secondary">
+          <a class="hero-small" href="#explore" data-open-task="place_bread_skillet"><video class="ambient-video" src="assets/hero/robotwin.mp4" poster="assets/hero/robotwin.webp" autoplay muted loop playsinline preload="metadata" aria-label="RoboTwin-AV bread placement demonstration"></video><span class="mini-domain">01 / ROBOTWIN-AV</span><span class="mini-caption">Coordinate the hands.<b>↗</b></span></a>
+          <a class="hero-small" href="#explore" data-open-task="conditional_pick"><video class="ambient-video" src="assets/hero/tavis.mp4" poster="assets/hero/tavis.webp" autoplay muted loop playsinline preload="metadata" aria-label="TAVIS conditional-pick demonstration"></video><span class="mini-domain">02 / TAVIS</span><span class="mini-caption">Find the evidence.<b>↗</b></span></a>
+        </div>
+      </div>
+      <div class="reel-footer"><span>Selected source demonstrations · real robot + simulation</span><button id="motion-toggle" aria-pressed="false"><span id="motion-icon">Ⅱ</span> <span id="motion-label">Pause motion</span></button></div>
+      <div class="quick-facts"><div><strong>50</strong><span>RoboTwin-AV benchmark tasks</span></div><div><strong>16<span>-D</span></strong><span>Bimanual + pan/tilt actions</span></div><div><strong>3</strong><span>Physical kitchen tasks</span></div><div><strong>Raw RGB</strong><span>At deployment · inversion during training</span></div></div>
+    </section>
+
+    <section id="idea" class="idea wrap section">
+      <div class="section-index">01 / THE IDEA</div>
+      <div class="idea-layout"><h2 class="display-heading">Seeing more<br>is only <em>half the story.</em></h2><div class="idea-copy"><p class="lead">Moving the camera can reveal a useful relation. It can also move a critical cue out of view.</p><p>ActiveWAM treats active vision as a <strong>retain–acquire problem</strong>: learn which evidence should survive visual changes, then jointly decide how to move the head and hands. A recent, view-aware observation history connects the two.</p><details class="abstract"><summary>Read the abstract <span>＋</span></summary><p id="abstract-text">Active vision manipulation requires a policy to control both its camera and its end-effectors, yet camera motion determines which evidence remains visible within finite observation windows. Acquiring a new view can displace task-critical cues, while retaining a view forgoes potentially useful observations. We formulate this as an evidence-aware retain–acquire problem and present ActiveWAM, a unified world–action model that learns observation and manipulation jointly. Training-time inversion constrains a frozen video prior by task-bearing source evidence and visible temporal changes. At deployment, the policy generates bimanual and pan/tilt actions from view-aware raw history and updates context from newly measured RGB observations. Future-video prediction serves as a co-training signal. RoboTwin-AV extends 50 manipulation tasks with executable pan/tilt control and automatically generated demonstrations.</p></details></div></div>
+      <div class="principles"><article><span class="principle-number">01</span><h3>Retain the evidence.</h3><p>Task-guided history inversion preserves source evidence and visible changes while transforming appearance during training.</p></article><article><span class="principle-number">02</span><h3>Acquire the next view.</h3><p>Head motion and bimanual manipulation share one generator. Staying still is a valid observation action.</p></article><article><span class="principle-number">03</span><h3>Act on what was seen.</h3><p>Execute a short action prefix, acquire actual RGB, and rebuild context from the available observation window.</p></article></div>
+    </section>
+
+    <section id="explore" class="explore section dark-section">
+      <div class="wrap"><div class="section-top"><div><div class="section-index">02 / IN ACTION</div><h2 class="display-heading">Follow the task.<br><em>Watch the view change.</em></h2></div><p>Explore real RGB, source-aligned head poses, and key moments across three domains.</p></div>
+        <div class="gallery-toolbar"><div class="segmented" role="group" aria-label="Demonstration domain"><button data-domain="robotwin" class="active" aria-pressed="true">RoboTwin-AV <span>16</span></button><button data-domain="tavis" aria-pressed="false">TAVIS <span>5</span></button><button data-domain="real" aria-pressed="false">Real robot <span>3</span></button></div><label class="task-select-label">Task <select id="task-select" aria-label="Select a demonstration task"></select></label></div>
+        <div class="gallery-stage">
+          <div class="gallery-title"><div><span class="micro" id="gallery-domain">ROBOTWIN-AV / SOURCE DEMONSTRATION</span><h3 id="gallery-title">Bread into the skillet</h3></div><div class="view-toggle" role="group" aria-label="Viewer mode"><button class="active" id="mode-frames" aria-pressed="true">Keyframes</button><button id="mode-video" aria-pressed="false">Video + pose</button></div></div>
+          <div id="keyframe-view"><div class="frame-pair"><figure class="rgb-figure"><img id="gallery-image" src="assets/hero/robotwin.webp" alt="Selected head-camera keyframe" width="640" height="480"><figcaption><span>HEAD CAMERA</span><span id="frame-time">0.00 s</span></figcaption></figure><figure class="pose-figure"><div class="pose-heading"><span>HEAD ORIENTATION</span><span class="pose-live"><i></i> SOURCE ALIGNED</span></div><img id="gallery-pose" alt="Two-axis head mechanism at the selected frame"><p id="no-pose" hidden>Head telemetry is unavailable for this recording.</p><figcaption><div><span>PAN</span><strong id="pan-value">—</strong></div><div><span>TILT</span><strong id="tilt-value">—</strong></div></figcaption></figure></div><div class="frame-navigation"><span id="stage-name">Initial view</span><div><button id="frame-prev" aria-label="Previous keyframe">←</button><span id="frame-count">01 / 07</span><button id="frame-next" aria-label="Next keyframe">→</button></div></div><div id="filmstrip" class="filmstrip" role="group" aria-label="Task keyframes"></div></div>
+          <div id="video-view" hidden><video id="task-video" controls playsinline preload="none" aria-label="Synchronized task RGB and head pose video"></video><div class="video-description">RGB + source-aligned pan/tilt · original playback timing</div></div>
+          <p class="gallery-note" id="gallery-note"></p>
+        </div>
+        <div class="gallery-bottom"><p><span class="small-dot"></span> These sequences visualize source demonstrations and camera motion.</p><a id="download-sequence" class="light-link" download>Download sequence <span>↓</span></a></div>
+      </div>
+    </section>
+
+    <section id="method" class="method wrap section">
+      <div class="section-top"><div><div class="section-index">03 / THE METHOD</div><h2 class="display-heading">One model.<br><em>Head and hands together.</em></h2></div><p>Learning to preserve task evidence and learning to control observation, within a unified world–action model.</p></div>
+      <div class="method-tabs" role="group" aria-label="Method detail"><button class="active" data-method="train" aria-pressed="true">01 <span>Training-time inversion</span></button><button data-method="history" aria-pressed="false">02 <span>View-aware history</span></button><button data-method="act" aria-pressed="false">03 <span>Joint action generation</span></button></div>
+      <div class="method-explanation" aria-live="polite"><span id="method-tag" class="small-tag">TRAINING ONLY</span><h3 id="method-title">Transform appearance. Preserve task evidence.</h3><p id="method-copy">A frozen Wan video prior transforms each camera’s observed history independently. Task-weighted source preservation and temporal-change constraints guide partial inversion. Raw and accepted transformed histories share the same original action and future-video targets.</p></div>
+      <button class="figure-button" data-lightbox="assets/figures/method.webp" data-caption="ActiveWAM architecture · figure from the current manuscript" aria-label="Enlarge the ActiveWAM architecture figure"><img src="assets/figures/method.webp" width="2430" height="1021" loading="lazy" alt="ActiveWAM architecture: training-time inversion, view-aware history, and a shared world–action generator"><span class="figure-zoom">Expand figure ↗</span></button>
+      <div class="method-caption"><span>FIG. 02 / ARCHITECTURE</span><p>Inversion is used during training. Deployment conditions on raw history and returns one joint action trajectory; future-video prediction is a co-training signal.</p></div>
+    </section>
+
+    <section id="inversion" class="inversion section">
+      <div class="wrap"><div class="section-top"><div><div class="section-index">04 / INSIDE THE VISUAL HISTORY</div><h2 class="display-heading">Change the appearance.<br><em>Keep the task in sight.</em></h2></div><p>Explore our recent visualization studies on the six key stages of a real cooking sequence.</p></div>
+      <div class="inversion-panel"><div class="inversion-topline"><span class="small-tag">ILLUSTRATIVE PREVIEW</span><span>Task: scramble eggs</span></div><div class="inversion-images"><figure><img id="inversion-raw" src="assets/inversion/frame-4-level-0.webp" width="540" height="350" loading="lazy" alt="Original real-robot keyframe"><figcaption>Source RGB <span id="inv-stage-name">Pour Egg</span></figcaption></figure><figure><img id="inversion-processed" src="assets/inversion/frame-4-level-3.webp" width="540" height="350" loading="lazy" alt="Designed colored-noise visualization of the same keyframe"><figcaption>Appearance study <span id="inv-level-name">Level 3 / 5</span></figcaption></figure></div><div class="inversion-controls"><div id="inversion-stages" class="stage-buttons" role="group" aria-label="Cooking stage"></div><div class="strength-control"><label for="strength">Visual noise strength <output id="strength-output" for="strength">3</output></label><input id="strength" type="range" min="0" max="5" value="3" step="1" aria-label="Illustrative visual noise strength"><div class="range-ends"><span>Source</span><span>Stronger</span></div></div></div><p class="provenance-note">These previews use designed RGB perturbations to illustrate a visual target. The levels are display settings, not diffusion timesteps or model measurements.</p></div>
+      <div class="inversion-extra"><details><summary>View the full strength sweep <span>↗</span></summary><img src="assets/inversion/full-sweep.webp" loading="lazy" alt="Previously created six-level colored-noise visual design sweep"><p class="caption-note">Archived design study. The original “tau” labels denote synthetic noise multipliers, not the paper’s inversion parameter.</p></details><details><summary>View the model-produced TAVIS prototype <span>↗</span></summary><img class="prototype-image" src="assets/inversion/tavis-prototype.webp" loading="lazy" alt="Existing TAVIS partial-inversion prototype cache, alternating raw and transformed rows"><p class="caption-note">Archived partial-inversion cache. Raw/transformed pairs are shown for head, left wrist and right wrist, with three history timestamps per row. This is a prototype, distinct from the illustrative real-robot previews above.</p></details></div>
+      <details class="studies-archive"><summary>RoboTwin appearance studies <span>5 task sequences +</span></summary><div id="inversion-examples" class="studies-grid"></div><p class="caption-note">Design studies from the previous visualization iterations; image post-processing, not checkpoint outputs.</p></details>
+      </div>
+    </section>
+
+    <section id="results" class="results wrap section">
+      <div class="section-top"><div><div class="section-index">05 / EXPERIMENTS</div><h2 class="display-heading">Evidence across<br><em>views and environments.</em></h2></div><p>Comparing manipulation success across visual and camera-pose shifts. Select a benchmark and condition to explore the results.</p></div>
+      <div class="results-tabs segmented" role="group" aria-label="Benchmark"><button data-benchmark="robotwin" class="active" aria-pressed="true">RoboTwin-AV</button><button data-benchmark="tavis" aria-pressed="false">TAVIS</button><button data-benchmark="real" aria-pressed="false">Real robot</button></div>
+      <div class="results-layout"><div class="results-summary"><span class="micro" id="result-condition">COMPOUND SHIFT</span><div class="result-number"><span id="result-value">53.3</span><span>%</span></div><h3 id="result-heading">Success under appearance + head-pose shifts.</h3><p id="result-protocol">50 tasks · 3 seeds · 100 episodes per task, seed and condition.</p><span class="delta-badge" id="result-delta">+20.0 pp vs. Fast-WAM</span></div><div class="chart-card"><div class="chart-controls"><label>Condition <select id="condition-select" aria-label="Evaluation condition"></select></label><span>SUCCESS RATE (%) ↑</span></div><div id="result-chart" class="bar-chart" role="img" aria-label="Benchmark success rate comparison"></div><div class="chart-scale"><span>0</span><span>50</span><span>100</span></div></div></div>
+      <details class="data-table-wrap"><summary>View exact values & evaluation protocol <span>＋</span></summary><div class="table-scroll"><table id="results-table"><caption id="table-caption">Manuscript-reported success rates</caption><thead></thead><tbody></tbody></table></div><p id="table-protocol" class="caption-note"></p></details>
+      <div class="findings"><article><span class="micro">HISTORY MATTERS</span><strong>+11.6<span> pp</span></strong><p>Compound success over the raw-history control (53.3% vs. 41.7%).</p></article><article><span class="micro">OBSERVATION CONTROL</span><strong>1.70<span> rad</span></strong><p>Head travel per episode for joint learned control, compared with 4.10 rad for object tracking.</p></article><article><span class="micro">PHYSICAL KITCHEN</span><strong>30<span> / 60</span></strong><p>Full-task successes across three physical kitchen tasks; 20 attempts per task.</p></article></div>
+      <p class="caption-note">Manuscript-reported results; evaluation protocols and exact values are available above. The gallery presents source demonstrations separately from the scored evaluations.</p>
+    </section>
+
+    <section id="resources" class="resources dark-section section"><div class="wrap"><div class="resources-heading"><div><div class="section-index">06 / GO DEEPER</div><h2 class="display-heading">A new perspective<br><em>on robot learning.</em></h2></div><div class="resource-links"><a href="assets/paper/activewam-manuscript-20260914.pdf" target="_blank" rel="noopener"><span><b>Read the manuscript</b><small>Included PDF · September 14, 2026</small></span><span>↗</span></a><a href="assets/paper/activewam-supplement-20260914.pdf" target="_blank" rel="noopener"><span><b>Supplementary material</b><small>Implementation details & protocols</small></span><span>↗</span></a><a href="assets/figures/task-sequences.webp" data-lightbox="assets/figures/task-sequences.webp" data-caption="Head-view task sequences · current manuscript figure"><span><b>Explore the task figure</b><small>RoboTwin-AV + real-robot sequence</small></span><span>↗</span></a></div></div><div class="citation-block"><div><h3>Citation</h3><span>Anonymous manuscript · citation draft</span></div><button id="copy-citation" class="copy-button">Copy BibTeX <span>⧉</span></button><pre id="citation">@misc{activewam2026,
+  title = {ActiveWAM: Evidence-Aware Active Vision
+           for World-Action Models},
+  author = {Anonymous Authors},
+  year = {2026},
+  note = {Manuscript}
+}</pre><p id="copy-status" role="status" aria-live="polite"></p></div><div class="research-links"><span>In the world–action model ecosystem</span><a href="https://openmoss.github.io/EasyWAM/" target="_blank" rel="noopener">EasyWAM ↗</a><a href="https://dreamzero0.github.io/" target="_blank" rel="noopener">DreamZero ↗</a><a href="https://research.nvidia.com/labs/cosmos-lab/cosmos-policy/" target="_blank" rel="noopener">Cosmos Policy ↗</a></div></div></section>
+  </main>
+  <footer class="site-footer wrap"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true"><i></i></span>ActiveWAM.</a><p>Evidence-Aware Active Vision for World-Action Models<br><span>Anonymous Authors · 2026</span></p><a href="#" class="back-top">Back to top ↑</a></footer>
+  <dialog id="figure-dialog" aria-labelledby="figure-caption"><button id="close-dialog" aria-label="Close enlarged figure">×</button><img id="figure-image" alt="Enlarged research figure"><p id="figure-caption"></p></dialog>
+</body>
+</html>
