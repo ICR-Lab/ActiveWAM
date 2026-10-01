@@ -24,7 +24,8 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 let motionPaused = reduced.matches;
 let task = data.tasks.find(t => t.id === 'place_bread_skillet');
 let frameIndex = 3;
-let viewerMode = 'frames';
+// Video playback is the primary demo view; keyframes remain available as an explicit toggle.
+let viewerMode = 'video';
 let domain = 'robotwin';
 
 function setActive(buttons, chosen) {
@@ -128,7 +129,7 @@ $('#frame-prev').addEventListener('click',()=>{frameIndex=Math.max(0,frameIndex-
 $('#frame-next').addEventListener('click',()=>{frameIndex=Math.min(task.frames.length-1,frameIndex+1);renderFrame();});
 $('#mode-frames').addEventListener('click',()=>setViewerMode('frames'));
 $('#mode-video').addEventListener('click',()=>setViewerMode('video'));
-$$('[data-open-task]').forEach(a=>a.addEventListener('click',()=>{chooseTask(a.dataset.openTask, a.dataset.openTask==='egg_cooking'?4:2);setViewerMode('frames');}));
+$$('[data-open-task]').forEach(a=>a.addEventListener('click',()=>{chooseTask(a.dataset.openTask, a.dataset.openTask==='egg_cooking'?4:2);setViewerMode('video');}));
 renderTaskOptions();renderTask();
 
 const methodDetails={

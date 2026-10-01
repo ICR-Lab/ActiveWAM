@@ -2,7 +2,7 @@
 
 **Evidence-Aware Active Vision for World-Action Models**
 
-[Project website](https://icr-lab.github.io/ActiveWAM/) · arXiv: coming soon · Model code: coming soon · RoboTwin-AV repository: coming soon
+[Project website](https://icr-lab.github.io/ActiveWAM/) · [ActiveWAM code](https://github.com/Soraruholic/Active-WAM) · [RoboTwin-AV](https://github.com/Soraruholic/RoboTwin-AV) · arXiv: coming soon
 
 This repository currently hosts the ActiveWAM project website. Training and evaluation code will be released here later.
 
@@ -33,8 +33,8 @@ Edit [`public/site-config.js`](public/site-config.js):
 ```js
 window.ACTIVEWAM_LINKS = {
   arxiv: {url: null, status: 'Coming soon'},
-  code: {url: 'https://github.com/ICR-Lab/ActiveWAM', status: 'Coming soon'},
-  robotwin: {url: null, status: 'Coming soon'}
+  code: {url: 'https://github.com/Soraruholic/Active-WAM', status: 'Coming soon'},
+  robotwin: {url: 'https://github.com/Soraruholic/RoboTwin-AV', status: 'View repository'}
 };
 ```
 
