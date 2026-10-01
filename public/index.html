@@ -7,7 +7,7 @@
   <meta name="description" content="ActiveWAM: Evidence-Aware Active Vision for World-Action Models. Explore task-guided history learning, joint head–arm control, and real-robot demonstrations.">
   <meta property="og:title" content="ActiveWAM — Learn what to keep. Decide where to look.">
   <meta property="og:description" content="Evidence-aware active vision for world-action models. Interactive demonstrations, view-aware history, and RoboTwin-AV.">
-  <meta property="og:image" content="https://icr-lab.github.io/ActiveWAM/assets/hero/real.webp">
+  <meta property="og:image" content="https://icr-lab.github.io/ActiveWAM/assets/hero/real-head-motion.webp">
   <meta property="og:url" content="https://icr-lab.github.io/ActiveWAM/">
   <link rel="canonical" href="https://icr-lab.github.io/ActiveWAM/">
   <title>ActiveWAM · Evidence-Aware Active Vision</title>
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="styles.css">
   <script src="data.js" defer></script>
   <script src="site-config.js" defer></script>
+  <script src="hero-motion.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -51,9 +52,9 @@
       </div>
       <div class="hero-reel">
         <div class="hero-primary">
-          <video id="hero-real" class="ambient-video" src="assets/hero/real.mp4" poster="assets/hero/real.webp" autoplay muted loop playsinline preload="metadata" aria-label="Real-robot cooking highlights: pouring oil, pouring egg, and stirring"></video>
-          <div class="media-top"><span class="media-tag"><i></i> REAL ROBOT</span><span class="media-note">RECORDED HEAD VIEW</span></div>
-          <div class="media-bottom"><div><span class="micro">OBSERVE · FRAME · MANIPULATE</span><h2>A changing view.<br>A continuing task.</h2></div><a href="#explore" data-open-task="egg_cooking" class="round-link" aria-label="Explore the real-robot egg task">↗</a></div>
+          <video id="hero-real" class="ambient-video" src="assets/hero/real-head-motion.mp4" poster="assets/hero/real-head-motion.webp" autoplay muted loop playsinline preload="metadata" aria-label="Real head-camera motion: pan from the oil bottle to the egg bowl, then follow the bowl back to the pan"></video>
+          <div class="media-top"><span class="media-tag"><i></i> REAL ROBOT</span><span class="media-note head-telemetry" id="hero-head-pose" aria-label="Measured head angles">PAN +36.2° <span>·</span> TILT +40.2°</span></div>
+          <div class="media-bottom"><div><span class="micro">REAL HEAD MOTION · ORIGINAL SPEED</span><h2>A changing view.<br>A continuing task.</h2></div><a href="assets/hero/real-head-motion.mp4" target="_blank" rel="noopener" class="round-link" aria-label="Watch the real head-motion clip">↗</a></div>
           <span class="view-corner tl" aria-hidden="true"></span><span class="view-corner br" aria-hidden="true"></span>
         </div>
         <div class="hero-secondary">

@@ -57,6 +57,28 @@ document.addEventListener('visibilitychange',updateMotion);
 reduced.addEventListener('change', e=>{motionPaused=e.matches;updateMotion();});
 updateMotion();
 
+// Encoder values follow the displayed source frame, including the stationary-interval cut.
+const heroMotion = window.ACTIVEWAM_HERO_MOTION;
+const heroVideo = $('#hero-real');
+function renderHeroHeadPose(time) {
+  if (!heroMotion?.samples?.length) return;
+  const index = Math.min(heroMotion.samples.length - 1, Math.max(0, Math.floor(time * heroMotion.fps + 0.001)));
+  const [pan, tilt] = heroMotion.samples[index];
+  const signed = value => `${value >= 0 ? '+' : ''}${value.toFixed(1)}°`;
+  $('#hero-head-pose').textContent = `PAN ${signed(pan)} · TILT ${signed(tilt)}`;
+}
+if ('requestVideoFrameCallback' in heroVideo) {
+  const onFrame = (_now, metadata) => {
+    renderHeroHeadPose(metadata.mediaTime);
+    heroVideo.requestVideoFrameCallback(onFrame);
+  };
+  heroVideo.requestVideoFrameCallback(onFrame);
+} else {
+  heroVideo.addEventListener('timeupdate', () => renderHeroHeadPose(heroVideo.currentTime));
+}
+heroVideo.addEventListener('seeked', () => renderHeroHeadPose(heroVideo.currentTime));
+renderHeroHeadPose(0);
+
 $('#menu-toggle').addEventListener('click',()=>{
   const open=$('#navigation').classList.toggle('open');
   $('#menu-toggle').setAttribute('aria-expanded',String(open));

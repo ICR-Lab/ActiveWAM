@@ -4,7 +4,7 @@
 
 [Project website](https://icr-lab.github.io/ActiveWAM/) · [ActiveWAM code](https://github.com/Soraruholic/Active-WAM) · [RoboTwin-AV](https://github.com/Soraruholic/RoboTwin-AV) · arXiv: coming soon
 
-This repository currently hosts the ActiveWAM project website. Training and evaluation code will be released here later.
+This repository hosts the ActiveWAM project website. Training and evaluation code will be released in [Soraruholic/Active-WAM](https://github.com/Soraruholic/Active-WAM).
 
 ## Explore the project
 
@@ -41,6 +41,18 @@ window.ACTIVEWAM_LINKS = {
 Replace `null` with the actual HTTPS URL when ready, and change `status` to an appropriate release label, for example `Read paper` or `View code`. Unavailable links remain visible without navigating to a placeholder URL. Keep the static fallback entries in `public/index.html` consistent if supporting visitors with JavaScript disabled.
 
 ## Website source
+
+The real-robot hero uses two chronological excerpts from the frame-aligned `egg/1`
+recording: source frames **315–419** and **535–674**, about **24.5 seconds** at original
+speed. Both head sweeps are retained; only a stationary grasp interval is omitted.
+Measured PAN spans **−28.42° to +36.22°**; TILT stays near **+40.2°**.
+The upper-right readout uses measured encoder values for each displayed RGB frame.
+There is no artificial camera animation, reframing, stabilization or interpolation.
+
+The reel can be reproduced from the original local exports with
+`python tools/build_real_hero.py` (NumPy, Pillow and imageio-ffmpeg required).
+Public media: [`real-head-motion.mp4`](public/assets/hero/real-head-motion.mp4);
+frame provenance and angles: [`real-head-motion.csv`](public/assets/hero/real-head-motion.csv).
 
 | Path | Purpose |
 |---|---|

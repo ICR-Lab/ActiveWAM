@@ -46,7 +46,7 @@ if(endpoint){
       if(!response.ok)throw new Error(`HTTP ${response.status}: ${ref}`);
     }
   }));
-  const response=await fetch(new URL('assets/hero/real.mp4',endpoint+'/'),{headers:{Range:'bytes=0-1023'}});
+  const response=await fetch(new URL('assets/hero/real-head-motion.mp4',endpoint+'/'),{headers:{Range:'bytes=0-1023'}});
   if(response.status!==206||(await response.arrayBuffer()).byteLength!==1024)throw new Error('Video range request failed');
 }
 const files=[];
